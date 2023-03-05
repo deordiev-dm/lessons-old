@@ -1,0 +1,411 @@
+@import url(reset.css);
+@import url("https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap");
+
+body {
+	font-family: "Inter";
+	font-weight: 600;
+	line-height: 1.5;
+	color: #212b36;
+}
+
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+}
+
+[class*="__container"] {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.header {
+	background-color: #fff;
+}
+.wrapper__header {
+	position: fixed;
+	min-width: 100%;
+}
+.header__container {
+}
+
+.header__contents {
+	padding: 30px 0;
+}
+
+.header__contents * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* відступ вправо для елементів змісту шапки */
+.header__contents > *:not(:last-child) {
+	margin-right: 45px;
+}
+
+/* логотип */
+.logo-header {
+}
+.header__logo {
+}
+.logo-header__image {
+	max-width: 100%;
+}
+/* логотип */
+
+/* кнопка з випадаючим меню */
+.button-header {
+	padding: 9px 20.81px 9px 20.39px;
+	transition: 250ms all;
+
+	position: relative;
+}
+
+.header__button {
+}
+.button-header__link {
+}
+
+/* arrow */
+.button-header__link::after {
+	content: "";
+	display: inline-block;
+	height: 5.9px;
+	width: 11.1px;
+	background: url(../img/icons/arrow-down.svg) no-repeat;
+	vertical-align: middle;
+	margin-left: 13px;
+}
+
+.button-header:hover {
+	background: #f4f7ff;
+	border-radius: 5px;
+}
+/* під-меню */
+.sub-menu {
+}
+
+.button-header__sub-menu {
+	position: absolute;
+	z-index: 0; /* ?якщо не встановити, то меню починає блимати*/
+	top: 81px;
+	left: 0;
+	min-width: 180px;
+	background-color: #fff;
+	padding: 22px 24px;
+	border: 0.5px solid #e7e7e7;
+	border-radius: 5px;
+	transition: all 250ms;
+
+	/* код який відповідає за невидимість елементу не у стані хавер */
+	visibility: hidden;
+	opacity: 0;
+}
+
+.button-header:hover .button-header__sub-menu {
+	/* код який відповідає за появу підменю при хавері на кнопку */
+	visibility: visible;
+	opacity: 1;
+}
+
+.button-header__sub-menu::after {
+	content: "";
+	display: inline-block;
+	height: 120%;
+	width: 120%;
+	position: absolute;
+	top: -40px;
+	left: -10%;
+	/* ?тут я трохи не зрозумів, але працює чомусь тільки за від'ємного значення індексу */
+	/* ?якщо встановити значення 1, а для sub-menu 2, то не працює хавер для елементів підсписку */
+	z-index: -1;
+}
+
+.button-header__sub-menu::before {
+	content: "";
+	display: inline-block;
+	height: 15px;
+	width: 24px;
+	background: url(../img/design/triangle.svg) no-repeat;
+
+	position: absolute;
+	top: -10px;
+	left: 15px;
+}
+
+/* відступи між пунктами підсписку */
+.sub-menu > *:not(:last-child) {
+	margin-bottom: 13px;
+}
+
+.sub-menu__item {
+}
+
+.sub-menu__link {
+	font-weight: 500;
+	color: #637381;
+	position: relative;
+}
+
+.sub-menu__link:hover {
+	color: #3056d3;
+}
+
+.sub-menu__link_arrow {
+}
+
+.sub-menu__link_arrow::after {
+	content: "";
+	display: inline-block;
+	height: 10px;
+	width: 5px;
+	background: url(../img/icons/arrow-right.svg) no-repeat;
+	vertical-align: middle;
+	margin-left: 65px;
+}
+.sub-menu__link_arrow:hover:after {
+	background: url(../img/icons/arrow-right_hover.svg) no-repeat;
+}
+/* під-меню */
+
+/* під-під-меню */
+.sub-sub-menu {
+}
+.sub-menu__sub-sub-menu {
+	position: absolute;
+	top: 28px;
+	left: 101%;
+	background-color: #fff;
+	border: 0.5px solid #e7e7e7;
+	border-radius: 5px;
+	padding: 30px;
+	min-width: 650px;
+	font-size: 0;
+
+	/* cкриває блок */
+	visibility: hidden;
+	opacity: 0;
+	transition: all 250ms;
+}
+
+.sub-menu__item:hover .sub-menu__sub-sub-menu {
+	visibility: visible;
+	opacity: 1;
+}
+
+.sub-menu__sub-sub-menu::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	left: -40px;
+	top: 0;
+	height: 30%;
+	width: 10%;
+}
+
+.sub-menu__sub-sub-menu > *:not(:last-child) {
+	margin-right: 80px;
+}
+
+.sub-sub-menu__column {
+	max-width: 116px;
+	vertical-align: top;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.sub-sub-menu__list > *:not(:last-child) {
+	margin-bottom: 12px;
+}
+
+.sub-menu .sub-sub-menu__column_margin-right {
+	margin-right: 56px;
+}
+
+.sub-menu .sub-sub-menu__heading {
+	margin-bottom: 20px;
+}
+.list-sub-sub-menu {
+}
+.sub-sub-menu__list {
+}
+.list-sub-sub-menu__item {
+	font-weight: 500;
+	color: #637381;
+}
+
+.list-sub-sub-menu__item:hover {
+	color: #3056d3;
+}
+
+.list-sub-sub-menu__link {
+}
+.sub-sub-menu__image-block {
+	max-width: 220px;
+	font-size: 16px;
+	position: relative;
+}
+.image-block {
+}
+
+.image-block::after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(205, 131, 90, 0.65);
+}
+
+.image-block__img {
+	max-width: 100%;
+}
+
+.image-block__text,
+.image-block__button {
+	position: absolute;
+	z-index: 1;
+}
+
+.image-block__text {
+	left: 45px;
+	top: 113px;
+
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.2;
+	color: #ffffff;
+	text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.24);
+}
+
+.image-block__text_big {
+	left: 66px;
+	top: 65px;
+
+	font-weight: 700;
+	font-size: 40px;
+	text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.22);
+}
+
+.image-block__button {
+	left: 69px;
+	top: 158px;
+
+	font-weight: 700;
+	font-size: 11px;
+	line-height: 13px;
+	color: #ffffff;
+	text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.14);
+
+	padding: 6px 14px;
+	background: #3056d3;
+	border-radius: 2px;
+
+	transition: all 250ms;
+}
+
+.image-block__button:hover {
+	background: #082fb0;
+}
+
+.image-block__button:active {
+	background: #062075;
+}
+/* під-під-меню */
+
+/* кнопка з випадаючим меню */
+
+/* навігаціне меню */
+.nav-menu {
+}
+
+/* відступ вправо від меню до іконок */
+.header__contents .header__nav-menu {
+	margin-right: 125px;
+}
+
+.nav-menu__list {
+}
+
+/* відступи між елементами меню */
+.header__contents .nav-menu__list > *:not(:last-child) {
+	margin-right: 35px;
+}
+
+.nav-menu__item {
+}
+.nav-menu__link {
+	line-height: 1.18; /* 19/16 */
+	transition: 250ms all;
+}
+
+.nav-menu__link:hover {
+	color: #3056d3;
+}
+
+.nav-menu__link_arrow {
+}
+.nav-menu__link_arrow::after {
+	content: "";
+	display: inline-block;
+	height: 5.9px;
+	width: 11.1px;
+	background: url(../img/icons/arrow-down.svg) no-repeat;
+	margin-left: 7px;
+	vertical-align: middle;
+}
+.nav-menu__link_arrow:hover:after {
+	background: url(../img/icons/arrow-down_hover.svg) no-repeat;
+}
+/* навігаціне меню */
+
+/* панель з  іконками */
+.icons-menu {
+}
+.header__icons-menu {
+}
+
+.header__icons-menu > *:not(:last-child) {
+	margin-right: 21.7px;
+}
+
+.icon {
+}
+.icons-menu__icon {
+	position: relative;
+}
+.icon__search {
+}
+.icon__favorites {
+}
+.icon__cart {
+}
+/* кружечок з цифрою */
+.icon__index {
+	background-color: #3056d3;
+	height: 16px;
+	width: 16px;
+
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 1.18; /* 13/11 */
+	color: #ffffff;
+
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 1.5px;
+
+	position: absolute;
+	top: -5px;
+	left: 15px;
+}
+/* панель з  іконками */
+
+.page {
+	background-color: #212b36;
+	color: #f4f7ff;
+	padding-top: 150px;
+}
