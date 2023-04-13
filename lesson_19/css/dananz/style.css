@@ -8,18 +8,15 @@ body {
 	line-height: 1.6;
 	color: #9c9c9c;
 }
-
 .wrapper {
 	overflow: clip;
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 }
-
 .wrapper main {
 	flex-grow: 1;
 }
-
 [class*="__container"] {
 	max-width: 1230px;
 	padding: 0 15px;
@@ -94,7 +91,7 @@ body {
 	position: relative;
 	padding-top: 87.842466%; /* 513/584 */
 }
-.gallery-portfolio__item:nth-child(3n) {
+.gallery-portfolio__item_wide-image {
 	grid-column: 1 / span 2;
 	padding-top: 42.75%; /* 513/1200 */
 }
@@ -151,7 +148,7 @@ body {
 		grid-template: 1fr / 1fr;
 		gap: 10px 0;
 	}
-	.gallery-portfolio__item:nth-child(3n) {
+	.gallery-portfolio__item_wide-image {
 		grid-column: 1;
 		padding-top: 42.75%; /* 513/1200 */
 	}
